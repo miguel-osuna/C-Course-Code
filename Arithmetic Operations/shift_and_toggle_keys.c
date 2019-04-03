@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<conio.h>
+#include<dos.h>
+
+int main()
+
+{
+
+char *key;
+
+/*The key is pointing to memory address 0x417 where is monitors the
+status of toggle keys where they are on / off */
+key=(char *)0x417;
+
+while(1)
+{
+printf("\nPress ALT key to quit");
+
+if(*key&1)
+
+printf("\nRight Shift is pressed");
+
+if(*key&2)
+
+printf("\nLeft Shift is pressed");
+
+if(*key&4)
+
+printf("\nCtrl Lock is pressed");
+
+/*Setting this Key to quit when alt key is pressed */
+
+if(*key&8)
+
+break;
+
+if(*key&16)
+
+printf("\nScroll lock is activated");
+
+if(*key&32)
+
+printf("\nNum lock is activated");
+
+if(*key&64)
+
+printf("\nCaps lock is activated");
+
+if(*key&128)
+
+printf("\nInsert is activated");
+
+
+}
+
+}
